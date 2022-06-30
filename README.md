@@ -5,7 +5,7 @@
 - Sravitha Matlapudi
 - Tanisha Cooper
 - Hannah Allen
-- Jeff Fraizer
+- Jeff Frazier
 
 ## Background
 
