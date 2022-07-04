@@ -27,6 +27,10 @@
         body {
             background-color: lightblue;
         }
+        .nav-item a:hover {
+          background-color: slategray;
+        }
+
         .dash_col {
           border: 2px solid slategray;
           padding: 0em 1em;
@@ -35,17 +39,20 @@
           column-count: 3;
           column-gap: 20px;
         }
-        #chartdiv {
-          width: 100%;
-          height: 500px
-        }
-        #bardiv {
+        #Chloropleth {
           width: 100%;
           height: 500px;
+          border: 2px solid slategray;
         }
-        #mapdiv {
+        #BarChart {
           width: 100%;
           height: 500px;
+          border: 2px solid slategray;
+        }
+        #AmChart {
+          width: 100%;
+          height: 500px;
+          border: 2px solid slategray;
         }
     </style>
 </head>
@@ -64,13 +71,13 @@
               <a class="nav-link" href="./index.html#Dashboard">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Chloropleth</a>
+              <a class="nav-link" href="./index.html#Chloropleth">Chloropleth</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Bar Graph</a>
+              <a class="nav-link" href="./index.html#BarChart">Bar Graph</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">AmCharts</a>
+              <a class="nav-link" href="./index.html#AmChart">AmCharts</a>
             </li>
           </ul>
         </div>
@@ -89,7 +96,7 @@
     </section>
     <br>
     <br>
-    <section id="Dashboard" class="dashboard sec-pad">
+    <section id="Dashboard" class="dashboard_view sec-pad">
         <div class="container-fluid mx-auto text-center">
             <h1> COVID-19 Dashboard</h1>
             <div class="row dash_col" style="height: 200px;">
@@ -99,25 +106,36 @@
             </div>
             <hr class="dark horizontal my-0">
     </section>
-    <section>
+    <section id="Chloropleth" class="chloropleth_view sec-pad">
       <div class="containter">
-        <div class="row" style="height: 200px;"></div>
-        <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Chloropleth</h1>
+        <div class="row" style="height: 100px;"></div>
+        <h1 style="text-align: center; vertical-align:text-top; font-family: Verdana, Geneva, Tahoma, sans-serif;">Chloropleth</h1>
         <div id="chartdiv"></div>
       </div>
     </section>
-    <section>
+    <section id="BarChart" class="bar_chart_view sec-pad">
       <div class="containter">
-        <div class="row" style="height: 200px;"></div>
-        <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Bar Chart</h1>
+        <div class="row" style="height: 100px;"></div>
+        <h1 style="text-align: center; vertical-align:text-top; font-family: Verdana, Geneva, Tahoma, sans-serif;">Bar Chart</h1>
         <div id="bardiv"></div>
       </div>
     </section>
-    <section>
+    <section id="AmChart" class="amchart_view sec-pad">
       <div class="containter">
-        <div class="row" style="height: 200px;"></div>
-        <h1 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">AmChart</h1>
-        <div id="mapdiv"></div>
+        <div class="row" style="height: 100px;">
+          <h1 style="text-align: center; vertical-align: text-top; font-family: Verdana, Geneva, Tahoma, sans-serif;">AmChart</h1>
+          <div id="mapdiv"></div>
+          <div class="col-lg-8 col-sm-6 mt-sm-0 mt-4" style="border: 2px solid slategrey;">
+            <div class="card mb-4">
+              <div class="card-header pb-0 p-3">
+                <div class="d-flex justify-content-between">
+                  <h6 class="mb-0">Solid Gauge</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
       
