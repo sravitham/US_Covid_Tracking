@@ -30,7 +30,35 @@
           line-height: 1;
           column-count: 3;
           column-gap: 20px;
+          /* background-color: lightblue; */
         }
+        .dash_1 {
+          border: 1px solid black;
+          background-color: lightblue;
+          padding-top: 10px;
+          padding-right: 30px;
+          padding-bottom: 10px;
+          padding-left: 30px;
+        }
+        
+        .dash_2 {
+          border: 1px solid black;
+          background-color: lightblue;
+          padding-top: 10px;
+          padding-right: 30px;
+          padding-bottom: 10px;
+          padding-left: 30px;
+        }
+        
+        .dash_3 {
+          border: 1px solid black;
+          background-color: lightblue;
+          padding-top: 10px;
+          padding-right: 30px;
+          padding-bottom: 10px;
+          padding-left: 30px;
+        } 
+        
         .featurette-image {
           width: 500px;
           height: 500px;
@@ -57,10 +85,6 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
     </header>
@@ -151,12 +175,23 @@
             <br>
               <h1> COVID-19 Dashboard</h1>
               <br>
-              <div class="row dash_col" style="height: 200px;">
-                  <div class="dash_1 col-lg-4 p-3 my-5 border text-center" style="font-size: 24px; line-height: 2; border:5px solid slategray ; padding: 0em 1em; border-radius: 16px;">Total Positive Cases</div>
-                  <div class="dash_2 col-lg-4 p-3 my-5 border" style="font-size: 24px; line-height: 2; border:5px solid slategray ; padding: 0em 1em; border-radius: 16px;">Total Deaths</div>
-                  <div class="dash_3 col-lg-3 p-3 my-5 border" style="font-size: 24px; line-height: 2; border:5px solid slategray ; padding: 0em 1em; border-radius: 16px;">Currently Hospitalized</div>   
-              </div>
-              
+              <div class="d-flex p-3 text-black" class="row dash_col" style="height: 250px;">
+                  <div tab index="0" class="dash_1 col-lg-4 p-3 my-5 border text-center" style="font-size: 24px; line-height: 2; border:5px solid slategray ; border-radius: 16px;">
+                    <p class="smText">Total Cases<br>28,756,489</p>
+                    <!-- <p class="smText" id="sb-cases-total">28,756,489</p> -->
+                  </div> 
+                  <div tab index="0" class="dash_2 col-lg-4 p-3 my-5 border" style="font-size: 24px; line-height: 2; border:5px solid slategray ; border-radius: 16px;">
+                    <p class="smText">Total Deaths<br>515,151</p>
+                    <!-- <p class="smText" id="sb-cases-total">515,151</p> -->
+                  </div> 
+                  <div tab index="0" class="dash_3 col-lg-4 p-3 my-5 border" style="font-size: 24px; line-height: 2; border:5px solid slategray ;border-radius: 16px;">
+                    <p class="smText">Hospitalized<br>776,361</p>
+                    <!-- <p class="smText" id="sb-cases-total">776,361</p> -->
+                  </div>
+                </div>
+                <div tabindex="0" class="row">
+                  <p class="dataUpdateText" id="sb-data-text" style="text-align: right;">CDC | Data as of: March 03, 2021</p>
+                </div>
       </section>
 
         <!-- START THE FEATURETTES -->
