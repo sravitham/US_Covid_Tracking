@@ -1,12 +1,9 @@
 
-var dropdownMenu = d3.select("#selDataset");
+// var dropdownMenu = d3.select("#selDataset");
 
-d3.json("../../Data/covid_data.json").then((data) => {
+d3.json("../../covid_data.json").then((data) => {
     console.log(data)
-    var ID=data.names;
-   // Assign the value of the dropdown menu option to be the name of the option
-    ID.forEach(name => dropdownMenu.append('option').text(name).property('value',name));
-    return data;
+
   });
 
 
