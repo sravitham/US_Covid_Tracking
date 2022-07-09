@@ -21,13 +21,16 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
     * **Topic/Rationale/Use Cases:** Determine what use cases and data we want to visualize. Use cases help determined how our data would help our audience. Review link above to identify a list use cases and the project proposal. 
     * [Data Set](./Data/covid_data.json): Selected the dataset for historical COVID-19 as data collection by state ended on March 07, 2021 per website. We selected the api and studied the json data to best know how to visualize it for our audience.
     * **Specifications:** Assisted in sketching our final design by pulling in pictures on how we want to display our data. Determined that we wanted a dashboard, chloropleth map, bar graph, and gauge to showcase our data. See images we gathered our inspiration. 
+
     ![Dashboard](./getbootstrap.com/Images/dashboard_img.png)
     ![Chloropleth Map](./getbootstrap.com/Images/carousel_img_us_map.png)
     ![Bar Graph](./getbootstrap.com/Images/bar_img.png)
     ![AmChart Guage](./getbootstrap.com/Images/amChart_img.jpg)
     * **Sketch Final Design:** From the inspirational maps and data, we sketched what we felt would be the final design of our data visualization. 
     ![Final Sketch](./getbootstrap.com/Images/final_sketch.jpg)
+
     * **Github Link:** [Project Repo](https://github.com/sravitham/US_Covid_Tracking.git)
+    
 2. Team Tasks & Processes
    > 1. ETL
    > 2. HTML/CSS Template
@@ -47,7 +50,7 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
 
 ## Resources/Tools
 * Python-Flask API
-* Leaflet/Plotly???
+* Plotly
 * Pandas
 * Numpy
 * HTML/CSS
@@ -60,6 +63,6 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
     - popper.min.js
     - bootstrap.min.js
 * Bootstrap
-* Mongo??
+
 
 
