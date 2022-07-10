@@ -60,16 +60,8 @@ var data = [{
     fill: chart.get("colors").getIndex(2)
   },
 }, {
-<<<<<<< HEAD
     category: "Recovered",
-    value: 28756489/10933942,
-||||||| bd31283
-    category: "Revovered",
-    value: 28756489/10933942,
-=======
-    category: "Revovered",
     value: 10933942,
->>>>>>> 3458ae5066d4ea464a26a818899424da9d126515
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(2)
