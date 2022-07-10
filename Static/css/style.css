@@ -4,7 +4,17 @@ body {
   
   #chartdiv {
     width: 100%;
-    height: 500px
+    height: 700px;
+  }
+
+  .guage_data {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 1px solid lightblue;
+  }
+
+  .guage_heading {
+    column-span: all;
   }
 
   .dash_col {
