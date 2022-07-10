@@ -1,17 +1,32 @@
-// call create map when the listener on the slider detects a change createMap(this.value)
-// function createMap(month){
+// Kelechi code
+// fs.readFile('../../Data/Covid_slider_all.json', (err, data) => {
+//   if (err) throw err;
+//   let covidData = JSON.parse(data)
+//   // console.log(covidData)
+
+//   // Using map to modify data
+//   let plotData = covidData.map(element => {
+//       return {id: `US-${element.state}`, value: element.positive, month: element.YearMonth.month, year: element.YearMonth.qyear }
+//       // return {id: element.state, value: element.death}
+//   })
+//   console.log(plotData)
+// });
+
+// Map function
 function createMap(){
   states= ["AL","FL","WA"]
   // chosenFile= f`../../Data/covid_${month}.json`
-  chosenFile= '../../Data/covid_Jan20.json'
+  chosenFile= '../../Data/Covid_slider_all.json'
   d3.json(chosenFile).then((data) => {
-    console.log(data)
-    // var dropdownMenu = d3.select("#selDataset");
-
-    // d3.json("../../covid_data.json").then((data) => {
-    //     console.log(data)
-
-    //   });
+    console.log(data);
+  //   var plotData = data.push({
+  //     id: `US-${data.state}`, 
+  //     value: data.positive, 
+  //     month: data.YearMonth.month,
+  //     year: data.YearMonth.qyear })
+    
+  // // });
+  //   console.log(plotData)
 
 
 
@@ -70,12 +85,12 @@ function createMap(){
   
     covidSeries=[];
     states.forEach(state => {
-      // checking to see if obj is undefined
+      // // checking to see if obj is undefined
       console.log(state in data['positive'])
       if (state in data['positive']){
         // covidSeries.push({ date: data['date'][state], id: state, value: data['positive'][state]});
         covidSeries.push({
-        date: data['date'][state],
+        year: sta.YearMonth.qyear ,
         id: state,
         // id:"US-WA",
         // id: "\"US-"+ state + "\"" , 
@@ -128,7 +143,7 @@ function createMap(){
 //   if (years[year] == undefined) {
 //     years[year] = [];
 //   }
-//   years[year].push(row.country);
+//   years[year].push(row.state);
   
 //   if (firstYear > year) {
 //     firstYear = year;
@@ -187,22 +202,22 @@ function createMap(){
 // }));
 
 
-// updateCountries(firstYear);
+// updateState(firstYear);
 
 // slider.events.on("rangechanged", function () {
 //   var year = firstYear + Math.round(slider.get("start", 0) * (lastYear - firstYear));
 //   slider.startGrip.get("label").set("text", year + "");
-//   updateCountries(year);
+//   updateState(year);
 //   console.log(year)
 //   // updateSeriesData(
 //   //   firstYear + Math.round(slider.get("start", 0) * (lastYear - firstYear))
 //   // );
 // });
 
-// function updateCountries(year) {
-//   am5.object.each(years, function(joinYear, countries) {
-//     //console.log(countries)
-//     am5.array.each(countries, function(country) {
+// function updateState(year) {
+//   am5.object.each(years, function(joinYear, State) {
+//     //console.log(State)
+//     am5.array.each(State, function(country) {
 //       var dataItem = polygonSeries.getDataItemById(country);
 //       if (dataItem) {
 //         dataItem.get("mapPolygon").set("active", joinYear <= year)
@@ -211,5 +226,5 @@ function createMap(){
 //   })
 // }
 
-};
+  };
 createMap();

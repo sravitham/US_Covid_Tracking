@@ -47,21 +47,21 @@ var data = [{
   }
 }, {
   category: "Hospitalized",
-  value: 28756489/776361,
+  value: 776361,
   full: 100,
   columnSettings: {
     fill: chart.get("colors").getIndex(1)
   }
 }, {
   category: "Deaths",
-  value: 28756489/515151,
+  value: 515151,
   full: 100,
   columnSettings: {
     fill: chart.get("colors").getIndex(2)
   },
 }, {
     category: "Revovered",
-    value: 28756489/10933942,
+    value: 10933942,
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(2)
@@ -93,9 +93,9 @@ xRenderer.grid.template.setAll({
 var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
   renderer: xRenderer,
   min: 0,
-  max: 100,
+  max: 28756489,
   strictMinMax: true,
-  numberFormat: "#'%'",
+  numberFormat: "#  cases",
   tooltip: am5.Tooltip.new(root, {})
 }));
 
@@ -155,7 +155,7 @@ var series2 = chart.series.push(am5radar.RadarColumnSeries.new(root, {
 series2.columns.template.setAll({
   width: am5.p100,
   strokeOpacity: 0,
-  tooltipText: "{category}: {valueX}%",
+  tooltipText: "{category}: {valueX}",
   cornerRadius: 20,
   templateField: "columnSettings"
 });

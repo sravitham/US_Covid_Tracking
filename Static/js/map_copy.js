@@ -1,17 +1,23 @@
+const fs = require('fs')
 // call create map when the listener on the slider detects a change createMap(this.value)
 // function createMap(month){
   function createMap(){
     states= ["AL","FL","WA"]
     // chosenFile= f`../../Data/covid_${month}.json`
-    chosenFile= '../../Data/covid_Jan20.json'
-    d3.json(chosenFile).then((data) => {
-      console.log(data)
-      // var dropdownMenu = d3.select("#selDataset");
-  
-      // d3.json("../../covid_data.json").then((data) => {
-      //     console.log(data)
-  
-      //   });
+    // Kelechi code
+    fs.readFile('../../Data/Covid_slider_all.json', (err, data) => {
+      if (err) throw err;
+      let covidData = JSON.parse(data)
+      // console.log(covidData)
+
+      // Using map to modify data
+      let plotData = covidData.map(element => {
+          return {id: `US-${element.state}`, value: element.positive, month: element.YearMonth.month, year: element.YearMonth.qyear }
+          // return {id: element.state, value: element.death}
+      })
+      console.log(plotData)
+    // });
+
   
   
   
