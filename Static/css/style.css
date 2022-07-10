@@ -4,13 +4,14 @@ body {
   
   #chartdiv {
     width: 100%;
-    height: 700px;
+    height: 750px;
   }
 
   .guage_data {
     column-count: 3;
     column-gap: 40px;
     column-rule: 1px solid lightblue;
+    height: 150px;
   }
 
   .guage_heading {

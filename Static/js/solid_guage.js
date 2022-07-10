@@ -60,7 +60,7 @@ var data = [{
     fill: chart.get("colors").getIndex(2)
   },
 }, {
-    category: "Revovered",
+    category: "Recovered",
     value: 28756489/10933942,
     full: 100,
     columnSettings: {
