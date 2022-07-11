@@ -40,28 +40,28 @@ var chart = root.container.children.push(am5radar.RadarChart.new(root, {
 // );
 var data = [{
   category: "Positives",
-  value: 28756489,
+  value: (28756489/28756489)*100,
   full: 100,
   columnSettings: {
     fill: chart.get("colors").getIndex(0)
   }
 }, {
   category: "Hospitalized",
-  value: 776361,
+  value: (776361/28756489)*100,
   full: 100,
   columnSettings: {
     fill: chart.get("colors").getIndex(1)
   }
 }, {
   category: "Deaths",
-  value: 515151,
+  value: (515151/28756489)*100,
   full: 100,
   columnSettings: {
     fill: chart.get("colors").getIndex(2)
   },
 }, {
     category: "Recovered",
-    value: 10933942,
+    value: (10933942/28756489)*100,
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(2)
@@ -93,9 +93,9 @@ xRenderer.grid.template.setAll({
 var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
   renderer: xRenderer,
   min: 0,
-  max: 28756489,
+  max: 100,
   strictMinMax: true,
-  numberFormat: "#  cases",
+  numberFormat: "# '%'",
   tooltip: am5.Tooltip.new(root, {})
 }));
 
