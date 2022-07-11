@@ -225,7 +225,7 @@ function updateid(year) {
     console.log(id, year, value)
     am5.array.each(id, function(id) {
       var dataItem = polygonSeries.getDataItemById(id, value);
-      if (dataItem) {
+      if (dataItem != year && value) {
         dataItem.get("mapPolygon").set("active", "heatRules", [{
           target: polygonSeries.mapPolygons.template,
           dataField: "value",
@@ -237,6 +237,7 @@ function updateid(year) {
     })
   })
 }
+
 // function updateid(year) {
 //   am5.object.each(years, function(joinYear, id, value) {
 //     console.log(id, year, value)
