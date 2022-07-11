@@ -7,7 +7,7 @@ const fs = require('fs')
 
 // console.log(covidData)
 
-fs.readFile('test.json', (err, data) => {
+fs.readFile('US_Covid_Tracking\Data\Covid_slider_all.json', (err, data) => {
     if (err) throw err;
     let covidData = JSON.parse(data)
     // console.log(covidData)
