@@ -7,13 +7,13 @@ const fs = require('fs')
 
 // console.log(covidData)
 
-fs.readFile('US_Covid_Tracking\Data\Covid_slider_all.json', (err, data) => {
+fs.readFile('../../Data/test.json', (err, data) => {
     if (err) throw err;
     let covidData = JSON.parse(data)
-    // console.log(covidData)
+    console.log(covidData)
 
     // Using map to modify data
-    let plotData = covidData.map(element => {
+    let plotData = Object.keys(covidData).map(element => {
         return {id: `US-${element.state}`, value: element.positive, month: element.YearMonth.month, year: element.YearMonth.qyear }
         // return {id: element.state, value: element.death}
     })

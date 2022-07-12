@@ -149,7 +149,7 @@ for(var i = 0; i < polygonSeries.data._values.length; i++) {
   if (years[year] == undefined) {
     years[year] = [];
   }
-  years[year].push(row.id);
+  years[year].push(row.id, row.value);
   
   if (firstYear > year) {
     firstYear = year;
@@ -221,13 +221,52 @@ slider.events.on("rangechanged", function () {
 });
 
 function updateid(year) {
-  am5.object.each(years, function(joinYear, id) {
-    console.log(id)
+  am5.object.each(years, function(joinYear, id, value) {
+    // console.log(id, year, value)
     am5.array.each(id, function(id) {
-      var dataItem = polygonSeries.getDataItemById(id);
-      if (dataItem) {
-        dataItem.get("mapPolygon").set("active", joinYear <= year)
+      var dataItem = polygonSeries.getDataItemById(id), value;
+      console.log(dataItem);
+      // Check on this line 
+      if (dataItem != year && value) {
+        dataItem.get("mapPolygon").setAll("active", "heatRules", [{
+          target: polygonSeries.mapPolygons.template,
+          dataField: "value",
+          min: am5.color(0xff621f),
+          max: am5.color(0x661f00),
+          key: "fill"
+        }], joinYear <= year )
       }
     })
   })
 }
+
+// function updateid(year) {
+//   am5.object.each(years, function(joinYear, id, value) {
+//     console.log(id, year, value)
+//     am5.array.each(id, function(id) {
+//       var dataItem = polygonSeries.getDataItemById(id);
+//       if (dataItem) {
+//         dataItem.get("mapPolygon").setAll("activate", joinYear <= year)
+//       }
+//     })
+//   })
+// }
+
+// function updatid(year) {
+//   am5.object.each(years, function(joinYear,id,value) {
+//     // console.log(id, value)
+//     console.log(id, year, value)
+//     am5.array.each(id, function(id) {
+//       var dataItem = polygonSeries.getDataItemById(id);
+//       if (dataItem) {
+//         dataItem.get("mapPolygon").set("heatRules", [{
+//           target: polygonSeries.mapPolygons.template,
+//           dataField: "value",
+//           min: am5.color(0xff621f),
+//           max: am5.color(0x661f00),
+//           key: "fill"
+//         }])
+//       }
+//     })
+//   })
+// }
