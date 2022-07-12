@@ -19,19 +19,16 @@ function createMap(){
   d3.json(chosenFile).then((data) => {
     console.log(data);
     var states =data.state;
-    // console.log(states);
+    console.log(states);
     var positives=[];
     var hospitalizedCumulative = [];
     var deaths= [];
     var recovered= [];
-    // // states.forEach(id => {
-    // //   if (states.id==id){
-    // //     positives=data.positive;
-    // //     console.log(positives);
 
-    //   }})
+
+      }})
     
-    // })
+    })
 
 
 
