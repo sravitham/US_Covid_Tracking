@@ -14,21 +14,27 @@
 
 // Map function
 function createMap(){
-  states= ["AL","FL","WA"]
+  // states= ["AL","FL","WA"]
   chosenFile= '../../Data/allstatesAG_map.json'
   d3.json(chosenFile).then((data) => {
     console.log(data);
-    var states =data.state;
-    console.log(states);
-    var positives=[];
-    var hospitalizedCumulative = [];
-    var deaths= [];
-    var recovered= [];
-
-
-      }})
+    covidSeries=[];
+    var plotData = data.forEach(element => {
+      states = `US-${element.state}`;
+      // console.log(states);
+      values=element.positive;
+      // console.log(values);
+      console.log(plotData);
+      
+      covidSeries.push({ state: plotData.states, 
+          value: plotData.values });
+      // console.log(covidSeries);
+      return covidSeries;
+    });
     
-    })
+    
+    
+    });
 
 
 
@@ -87,27 +93,27 @@ function createMap(){
     });
   
   
-    covidSeries=[];
-    states.forEach(state => {
-      // // checking to see if obj is undefined
-      console.log(state in data['positive'])
-      if (state in data['positive']){
-        // covidSeries.push({ date: data['date'][state], id: state, value: data['positive'][state]});
-        covidSeries.push({
-        year: sta.YearMonth.qyear ,
-        id: state,
-        // id:"US-WA",
-        // id: "\"US-"+ state + "\"" , 
-        //  id: `US-${state}`, 
-        value: data['positive'][state]});
-        // covidSeries.replace(/'/g, '"');
-        // covidSeries.replaceAll("'", '"')
-      };
+    // covidSeries=[];
+    // states.forEach(state => {
+    //   // // checking to see if obj is undefined
+    //   console.log(state in data['positive'])
+    //   if (state in data['positive']){
+    //     // covidSeries.push({ date: data['date'][state], id: state, value: data['positive'][state]});
+    //     covidSeries.push({
+    //     year: sta.YearMonth.qyear ,
+    //     id: state,
+    //     // id:"US-WA",
+    //     // id: "\"US-"+ state + "\"" , 
+    //     //  id: `US-${state}`, 
+    //     value: data['positive'][state]});
+    //     // covidSeries.replace(/'/g, '"');
+    //     // covidSeries.replaceAll("'", '"')
+    //   };
       
-      console.log(covidSeries)
-    });
+    //   console.log(covidSeries)
+    // });
 
-    polygonSeries.data.setAll([covidSeries]);
+    // polygonSeries.data.setAll([covidSeries]);
     
     var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
       orientation: "vertical",
@@ -133,7 +139,7 @@ function createMap(){
       heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
       heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
     });
-  });
+  };
   // Make stuff animate on load ALL THE CODE BELOW IS THE SLIDER
 // chart.appear(1000, 100);
 
@@ -230,5 +236,5 @@ function createMap(){
 //   })
 // }
 
-  };
+// };
 createMap();
