@@ -15,18 +15,25 @@
 // Map function
 function createMap(){
   states= ["AL","FL","WA"]
-  // chosenFile= f`../../Data/covid_${month}.json`
-  chosenFile= '../../Data/Covid_slider_all.json'
+  chosenFile= '../../Data/allstatesAG_map.json'
   d3.json(chosenFile).then((data) => {
     console.log(data);
-  //   var plotData = data.push({
-  //     id: `US-${data.state}`, 
-  //     value: data.positive, 
-  //     month: data.YearMonth.month,
-  //     year: data.YearMonth.qyear })
+    var states =data.state;
+    // console.log(states);
+    var positives=[];
+    var hospitalizedCumulative = [];
+    var deaths= [];
+    var recovered= [];
+    // // states.forEach(id => {
+    // //   if (states.id==id){
+    // //     positives=data.positive;
+    // //     console.log(positives);
+
+    //   }})
     
-  // // });
-  //   console.log(plotData)
+    // })
+
+
 
 
 

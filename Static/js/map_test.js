@@ -222,11 +222,13 @@ slider.events.on("rangechanged", function () {
 
 function updateid(year) {
   am5.object.each(years, function(joinYear, id, value) {
-    console.log(id, year, value)
+    // console.log(id, year, value)
     am5.array.each(id, function(id) {
-      var dataItem = polygonSeries.getDataItemById(id, value);
+      var dataItem = polygonSeries.getDataItemById(id), value;
+      console.log(dataItem);
+      // Check on this line 
       if (dataItem != year && value) {
-        dataItem.get("mapPolygon").set("active", "heatRules", [{
+        dataItem.get("mapPolygon").setAll("active", "heatRules", [{
           target: polygonSeries.mapPolygons.template,
           dataField: "value",
           min: am5.color(0xff621f),
