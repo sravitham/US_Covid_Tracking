@@ -7,7 +7,7 @@ body {
     height: 700px;
   }
 
-  .guage_data {
+  .guage_data, .bar_data, .map_data {
     column-count: 3;
     column-gap: 40px;
     column-rule: 1px solid lightblue;
