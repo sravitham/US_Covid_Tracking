@@ -81,19 +81,19 @@ am4core.ready(function() {
       covidData.push({date:date,list});
       
     });
-    console.log(covidData);
+    // console.log(covidData);
   
 
     var numberFormatter = new am4core.NumberFormatter();
 
     var backgroundColor = am4core.color("#1e2128");
     var confirmedColor = am4core.color("#d21a1a");
-    var deathsColor = am4core.color("#1c5fe5");
+    var deathsColor = am4core.color("#6D2935");
 
     // for an easier access by key
     var colors = { confirmed: confirmedColor, deaths: deathsColor };
 
-    var countryColor = am4core.color("#3b3b3b");
+    var countryColor = am4core.color("#B9B9B9");
     var countryStrokeColor = am4core.color("#000000");
     var buttonStrokeColor = am4core.color("#ffffff");
     var countryHoverColor = am4core.color("#1b1b1b");
@@ -106,14 +106,14 @@ am4core.ready(function() {
     // Note to self ****** Make our data look like this ******
     // console.log(covid_us_total_timeline);
     // last date of the data
-    var lastDate = new Date(covid_us_total_timeline[covid_us_total_timeline.length - 1].date);
-    var currentDate = lastDate;
+    // var lastDate = new Date(covid_us_total_timeline[covid_us_total_timeline.length - 1].date);
+    // var currentDate = lastDate;
     // console.log(currentDate);
 
 
-    // Note to self This date don't look the same BUT we could use this instead!********************************
-    // var lastDate = new Date(covidData[covidData.length - 1].date);
-    // console.log(lastDate);
+    // Works for our data source
+    var lastDate = new Date(covidData[covidData.length - 1].date);
+    console.log(lastDate);
 
 
     var currentDate = lastDate;
@@ -143,7 +143,18 @@ am4core.ready(function() {
       console.log(countryIndexMap);
     }
 
+    // *****************Does not work for our country*******************
+    // var countryIndexMap = {};
+    // var list = covidData[covidData- 1].list;
+    // for (var i = 0; i < list.length; i++) {
+    //   var country = list[i]
+    //   // console.log(country);
+    //   countryIndexMap[country.id] = i;
+    //   console.log(countryIndexMap);
+    // }
 
+
+    // #### their code
     // function that returns current slide
     // if index is not set, get last slide
     function getSlideData(index) {
@@ -155,6 +166,18 @@ am4core.ready(function() {
 
       return data;
     }
+
+
+    // // Works for our code!!!!!!
+    // function getSlideData(index) {
+    //   if (index == undefined) {
+    //     index = covidData.length - 1;
+    //   }
+
+    //   var data = covidData[index];
+    //   // console.log(data);
+    //   return data;
+    // }
 
     // get slide data
     var slideData = getSlideData();
@@ -497,6 +520,15 @@ am4core.ready(function() {
       updateMapData(getSlideData(index).list);
       updateTotals(index);
     })
+
+    // // #########DOES NOT WORK WITH OUR DATA
+    // slider.events.on("rangechanged", function(event) {
+    //   var index = Math.round((covidData.length - 1) * slider.start);
+    //   updateMapData(getSlideData(index).list);
+    //   updateTotals(index);
+    // })
+
+
     // stop animation if dragged
     slider.startGrip.events.on("drag", () => {
       stop();
@@ -678,8 +710,11 @@ am4core.ready(function() {
     // make a copy of data as we will be modifying it
     lineChart.data = JSON.parse(JSON.stringify(covid_us_total_timeline));
     console.log(covid_us_timeline);
-    lineChart.data = JSON.parse(JSON.stringify(covidData));
-    console.log(covidData);
+
+    // // Works!!!!!!!
+    // lineChart.data = JSON.parse(JSON.stringify(covidData));
+    // console.log(covidData);
+
     // date axis
     // https://www.amcharts.com/docs/v4/concepts/axes/date-axis/
     var dateAxis = lineChart.xAxes.push(new am4charts.DateAxis());
@@ -1103,8 +1138,13 @@ am4core.ready(function() {
     // change line chart data to the selected states  
     function setCountryData(countryIndex) {
       // instead of setting whole data array, we modify current raw data so that a nice animation would happen
+      // for (var i = 0; i < lineChart.data.length; i++) {
+      //   var di = covid_us_timeline[i].list;
+      
+
+      // !!!!works for us
       for (var i = 0; i < lineChart.data.length; i++) {
-        var di = covid_us_timeline[i].list;
+        var di = covidData[i].list;
 
         var countryData = di[countryIndex];
         var dataContext = lineChart.data[i];
