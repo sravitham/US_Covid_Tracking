@@ -71,8 +71,8 @@ function createMap(){
     polygonSeries.set("heatRules", [{
       target: polygonSeries.mapPolygons.template,
       dataField: "value",
-      min: am5.color(0x095256),
-      max: am5.color(0xbb9f06),
+      min: am5.color(0xff621f),
+      max: am5.color(0x661f00),
       key: "fill"
     }]);
 
