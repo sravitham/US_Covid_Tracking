@@ -83,7 +83,7 @@ function createMap(){
   
 
     polygonSeries.data.setAll([
-    {id:  'US-AK', value:  56886},
+    {id: 'US-AK',value: 56886},
      {id:  'US-AL', value:  499819},
      {id:  'US-AR', value:  324818},
      {id:  'US-AS', value:  0},

@@ -60,6 +60,8 @@ am4core.ready(function() {
     'US-WY': 577737,
     'US-PR': 3195153
   }
+  console.log(covid_us_timeline);
+
   chosenFile= '../../Data/test1.json'
   d3.json(chosenFile).then((data) => {
     // console.log(data);
@@ -67,7 +69,7 @@ am4core.ready(function() {
 
     data.forEach(element => {
       // fix date
-      date=`${element.YearMonth.qyear}-${element.YearMonth.month}`, 
+      date=`${element.YearMonth.qyear}-${element.YearMonth.month}-${element.YearMonth.day}`; 
       list=[];
       states = `US-${element.state}`;
       // console.log(states);
@@ -81,7 +83,7 @@ am4core.ready(function() {
       covidData.push({date:date,list});
       
     });
-    // console.log(covidData);
+    console.log(covidData);
   
 
     var numberFormatter = new am4core.NumberFormatter();
@@ -103,7 +105,7 @@ am4core.ready(function() {
     var currentCountry = "United States (Total)";
 
 
-    // Note to self ****** Make our data look like this ******
+
     // console.log(covid_us_total_timeline);
     // last date of the data
     // var lastDate = new Date(covid_us_total_timeline[covid_us_total_timeline.length - 1].date);
@@ -111,9 +113,10 @@ am4core.ready(function() {
     // console.log(currentDate);
 
 
-    // Works for our data source
+    // Works for our data source !!!!
     var lastDate = new Date(covidData[covidData.length - 1].date);
-    console.log(lastDate);
+    var currentDate = lastDate;
+    console.log(currentDate);
 
 
     var currentDate = lastDate;
@@ -136,13 +139,13 @@ am4core.ready(function() {
     // make a map of country indexes for later use
     var countryIndexMap = {};
     var list = covid_us_timeline[covid_us_timeline.length - 1].list;
+    console.log(list);
     for (var i = 0; i < list.length; i++) {
       var country = list[i]
       // console.log(country);
       countryIndexMap[country.id] = i;
-      console.log(countryIndexMap);
     }
-
+    // console.log(countryIndexMap);
     // *****************Does not work for our country*******************
     // var countryIndexMap = {};
     // var list = covidData[covidData- 1].list;
@@ -150,34 +153,34 @@ am4core.ready(function() {
     //   var country = list[i]
     //   // console.log(country);
     //   countryIndexMap[country.id] = i;
-    //   console.log(countryIndexMap);
+      
     // }
-
+    // console.log(countryIndexMap);
 
     // #### their code
     // function that returns current slide
     // if index is not set, get last slide
-    function getSlideData(index) {
-      if (index == undefined) {
-        index = covid_us_timeline.length - 1;
-      }
-
-      var data = covid_us_timeline[index];
-
-      return data;
-    }
-
-
-    // // Works for our code!!!!!!
     // function getSlideData(index) {
     //   if (index == undefined) {
-    //     index = covidData.length - 1;
+    //     index = covid_us_timeline.length - 1;
     //   }
 
-    //   var data = covidData[index];
-    //   // console.log(data);
+    //   var data = covid_us_timeline[index];
+
     //   return data;
     // }
+
+
+    // // // Works for our code!!!!!!
+    function getSlideData(index) {
+      if (index == undefined) {
+        index = covidData.length - 1;
+      }
+
+      var data = covidData[index];
+      console.log(data);
+      return data;
+    }
 
     // get slide data
     var slideData = getSlideData();
@@ -515,18 +518,18 @@ am4core.ready(function() {
 
 
     // what to do when slider is dragged
-    slider.events.on("rangechanged", function(event) {
-      var index = Math.round((covid_us_timeline.length - 1) * slider.start);
-      updateMapData(getSlideData(index).list);
-      updateTotals(index);
-    })
-
-    // // #########DOES NOT WORK WITH OUR DATA
     // slider.events.on("rangechanged", function(event) {
-    //   var index = Math.round((covidData.length - 1) * slider.start);
+    //   var index = Math.round((covid_us_timeline.length - 1) * slider.start);
     //   updateMapData(getSlideData(index).list);
     //   updateTotals(index);
     // })
+
+    // // !!!!!!!!!#########DOES NOT WORK WITH OUR DATA
+    slider.events.on("rangechanged", function(event) {
+      var index = Math.round((covidData.length - 1) * slider.start);
+      updateMapData(getSlideData(index).list);
+      updateTotals(index);
+    })
 
 
     // stop animation if dragged
@@ -708,12 +711,12 @@ am4core.ready(function() {
     lineChart.paddingTop = 3;
 
     // make a copy of data as we will be modifying it
-    lineChart.data = JSON.parse(JSON.stringify(covid_us_total_timeline));
-    console.log(covid_us_timeline);
+    // lineChart.data = JSON.parse(JSON.stringify(covid_us_total_timeline));
+    // console.log(covid_us_timeline);
 
     // // Works!!!!!!!
-    // lineChart.data = JSON.parse(JSON.stringify(covidData));
-    // console.log(covidData);
+    lineChart.data = JSON.parse(JSON.stringify(covidData));
+    console.log(covidData);
 
     // date axis
     // https://www.amcharts.com/docs/v4/concepts/axes/date-axis/
