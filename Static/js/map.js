@@ -71,8 +71,8 @@ function createMap(){
     polygonSeries.set("heatRules", [{
       target: polygonSeries.mapPolygons.template,
       dataField: "value",
-      min: am5.color(0xff621f),
-      max: am5.color(0x661f00),
+      min: am5.color(0x1FBCFF),
+      max: am5.color(0x0D1F68),
       key: "fill"
     }]);
 
@@ -143,8 +143,8 @@ function createMap(){
     
     var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
       orientation: "vertical",
-      startColor: am5.color(0xff621f),
-      endColor: am5.color(0x661f00),
+      startColor: am5.color(0x1FBCFF),
+      endColor: am5.color(0x0D1F68),
       startText: "Lowest",
       endText: "Highest",
       stepCount: 5
