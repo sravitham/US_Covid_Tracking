@@ -108,15 +108,15 @@ am4core.ready(function() {
 
     // console.log(covid_us_total_timeline);
     // last date of the data
-    // var lastDate = new Date(covid_us_total_timeline[covid_us_total_timeline.length - 1].date);
-    // var currentDate = lastDate;
-    // console.log(currentDate);
+    var lastDate = new Date(covid_us_total_timeline[covid_us_total_timeline.length - 1].date);
+    var currentDate = lastDate;
+    console.log(currentDate);
 
 
     // Works for our data source !!!!
-    var lastDate = new Date(covidData[covidData.length - 1].date);
-    var currentDate = lastDate;
-    console.log(currentDate);
+    // var lastDate = new Date(covidData[covidData.length - 1].date);
+    // var currentDate = lastDate;
+    // console.log(currentDate);
 
 
     var currentDate = lastDate;
@@ -160,27 +160,27 @@ am4core.ready(function() {
     // #### their code
     // function that returns current slide
     // if index is not set, get last slide
-    // function getSlideData(index) {
-    //   if (index == undefined) {
-    //     index = covid_us_timeline.length - 1;
-    //   }
-
-    //   var data = covid_us_timeline[index];
-
-    //   return data;
-    // }
-
-
-    // // // Works for our code!!!!!!
     function getSlideData(index) {
       if (index == undefined) {
-        index = covidData.length - 1;
+        index = covid_us_timeline.length - 1;
       }
 
-      var data = covidData[index];
+      var data = covid_us_timeline[index];
       console.log(data);
       return data;
     }
+
+
+    // // // Works for our code!!!!!!
+    // function getSlideData(index) {
+    //   if (index == undefined) {
+    //     index = covidData.length-1;
+    //   }
+
+    //   var data = covidData[index];
+    //   console.log(data);
+    //   return data;
+    // }
 
     // get slide data
     var slideData = getSlideData();
@@ -1245,8 +1245,16 @@ am4core.ready(function() {
       updateCountryName();
 
       // update line chart data (again, modifying instead of setting new data for a nice animation)
+      // for (var i = 0; i < lineChart.data.length; i++) {
+      //   var di = covid_us_total_timeline[i];
+      //   var dataContext = lineChart.data[i];
+      //   dataContext.confirmed = di.confirmed;
+      //   dataContext.deaths = di.deaths;
+      //   valueAxis.min = undefined;
+      //   valueAxis.max = undefined;
+      // }
       for (var i = 0; i < lineChart.data.length; i++) {
-        var di = covid_us_total_timeline[i];
+        var di = covidData[i];
         var dataContext = lineChart.data[i];
         dataContext.confirmed = di.confirmed;
         dataContext.deaths = di.deaths;
@@ -1268,7 +1276,8 @@ am4core.ready(function() {
     // update total values in buttons
     function updateTotals(index) {
       if (!isNaN(index)) {
-        var di = covid_us_total_timeline[index];
+        // var di = covid_us_total_timeline[index];
+        var di = covidData[index];
         var date = new Date(di.date);
         currentDate = date;
 
