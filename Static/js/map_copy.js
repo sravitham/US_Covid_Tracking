@@ -60,7 +60,7 @@ am4core.ready(function() {
     'US-WY': 577737,
     'US-PR': 3195153
   }
-  console.log(covid_us_timeline);
+  // console.log(covid_us_timeline);
 
   chosenFile= '../../Data/test1.json'
   d3.json(chosenFile).then((data) => {
