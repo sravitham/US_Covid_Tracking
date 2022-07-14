@@ -76,11 +76,14 @@ function createMap(){
       key: "fill"
     }]);
 
+
+
     polygonSeries.mapPolygons.template.events.on("click", function(ev) {
       heatLegend.showValue(ev.target.dataItem.get("value"));
       polygonSeries.zoomToDataItem(ev.target.dataItem);
       polygonSeries.hide();
       polygonSeries.show();
+
     });
   
   
