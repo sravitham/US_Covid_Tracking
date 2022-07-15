@@ -45,8 +45,13 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
 1. Main Page
 2. View One
 3. View Two
+
 4. View Three
+
+![image](https://user-images.githubusercontent.com/99145651/179124869-48189c40-2eba-46e0-82fe-557d6a1c3053.png)
+
 5. Our Team
+
 ![image](https://user-images.githubusercontent.com/99145651/179123246-7aeebdf3-767b-43d2-a384-ddc7a4a7b4c0.png)
 
 
