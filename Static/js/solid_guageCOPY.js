@@ -1,3 +1,15 @@
+// d3.json('../../Data/covidSummary.json').then((cov) =>{
+//   console.log(cov)
+//   var toDeaths=cov['Total Deaths'][0]
+//   var toRecovered=cov['Total Recovered'][0]
+//   var toHosp=cov['Total Hospitalized'][0]
+//   var toPos=cov['Total Positives'][0]
+//   console.log(toRecovered);
+//   console.log(toPos);
+//   console.log(toHosp);
+//   console.log(toDeaths);
+  
+
 // Create root element
 // https://www.amcharts.com/docs/v5/getting-started/#Root_element
 var root = am5.Root.new("chartdiv");
@@ -20,46 +32,66 @@ var chart = root.container.children.push(am5radar.RadarChart.new(root, {
   endAngle: 180
 }));
 
-d3.json('../../Data/covidSummary.json').then((cov) =>{
-  console.log(cov)
-  var toDeaths=cov['Total Deaths'][0]
-  var toRecovered=cov['Total Recovered'][0]
-  var toHosp=cov['Total Hospitalized'][0]
-  var toPos=cov['Total Positives'][0]
-  console.log(toRecovered);
-  console.log(toPos);
-  console.log(toHosp);
-  console.log(toDeaths);
   /////////////////////////ALL DATA //////////////////////////
   var data = [{
     category: "Positives",
-    value: (toPos/toPos)*100,
+    value: (28756489/28756489)*100,
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(0)
     }
   }, {
     category: "Hospitalized",
-    value: (toHosp/toPos)*100,
+    value: (776361/28756489)*100,
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(1)
     }
   }, {
     category: "Deaths",
-    value: (toDeaths/toPos)*100,
+    value: (515151/28756489)*100,
     full: 100,
     columnSettings: {
       fill: chart.get("colors").getIndex(2)
     },
   }, {
       category: "Recovered",
-      value: (toRecovered/toPos)*100,
+      value: (10933942/28756489)*100,
       full: 100,
       columnSettings: {
         fill: chart.get("colors").getIndex(2)
       },
   }];
+  // /////////////////////////ALL DATA //////////////////////////
+  // var data = [{
+  //   category: "Positives",
+  //   value: (toPos/toPos)*100,
+  //   full: 100,
+  //   columnSettings: {
+  //     fill: chart.get("colors").getIndex(0)
+  //   }
+  // }, {
+  //   category: "Hospitalized",
+  //   value: (toHosp/toPos)*100,
+  //   full: 100,
+  //   columnSettings: {
+  //     fill: chart.get("colors").getIndex(1)
+  //   }
+  // }, {
+  //   category: "Deaths",
+  //   value: (toDeaths/toPos)*100,
+  //   full: 100,
+  //   columnSettings: {
+  //     fill: chart.get("colors").getIndex(2)
+  //   },
+  // }, {
+  //     category: "Recovered",
+  //     value: (toRecovered/toPos)*100,
+  //     full: 100,
+  //     columnSettings: {
+  //       fill: chart.get("colors").getIndex(2)
+  //     },
+  // }];
 
 
 
@@ -164,4 +196,4 @@ series2.appear(1000);
 chart.appear(1000, 100);
 
 
-});
+// });
