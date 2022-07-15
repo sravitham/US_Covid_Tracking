@@ -47,6 +47,8 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
 3. View Two
 4. View Three
 5. Our Team
+![image](https://user-images.githubusercontent.com/99145651/179123246-7aeebdf3-767b-43d2-a384-ddc7a4a7b4c0.png)
+
 
 ## Resources/Tools
 * Python-Flask API
