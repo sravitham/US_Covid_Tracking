@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Guage</title>
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="../css/chloropleth.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -42,22 +42,22 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" target="_blank" href="index.html">Home <span class="sr-only"></span></a>
+                <a class="nav-link" target="_blank" href="/index.html">Home <span class="sr-only"></span></a>
               </li>
               <!-- <li class="nav-item">
                 <a class="nav-link" href="#Dashboard">Dashboard</a>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="./view-1.html">Guage</a>
+                <a class="nav-link" href="/Static/js/view-1.html">Guage</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/ target="_blank">Bar Graph</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="/view-3.html" target="_blank">Map</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./view-2.html" target="_blank">Bar Graph</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./view-3.html" target="_blank">Map</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./meet-team.html" target="_blank">Our Team</a>
+                <a class="nav-link" href="/meet-team.html" target="_blank">Our Team</a>
               </li>
             </ul>
           </div>
@@ -86,7 +86,7 @@
 </section>
 <!-- HTML -->
 <div id="chartdiv"></div>  
-    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+    <select id="selDataset" onchange="optionChanged(this.value)" style="height: 80px; width: 150px; padding-left: 10px; position:absolute; left: 100px; bottom: 550px; border: 2px solid navy;"></select>
 <script src="https://d3js.org/d3.v7.min.js"></script>
  <!-- Map script        -->
 <script src="./solid_guage.js"></script>   
