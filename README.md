@@ -10,7 +10,7 @@
 ## Background
 This generation has experienced an all-time historic event. The entire world has been greatly impacted, particularly the United States. As a result, many are probably wondering, when will the Covid-19 pandemic end already? There are also others with questions on status of the pandemic historic and/or current hospitalizations, total cases, deaths, and recovered cases. A dashboard quickly shows numbers for the latter, but the goal of this project was to explore these topics in depth including an interactive chloropleth covid map of the United States that help to answer total cases, cumulative tests, and hospitalizations. The rationale behind the selection of this topic/data is to provide information for those with an interest in the rise and decline of COVID cases by state. The latter would allow one to view trends and to anticipate precaution, supplies, and/or hospital influx.
 
-![image](https://user-images.githubusercontent.com/99145651/178017741-bcd00d97-fb85-4895-9e14-a08452d3c581.png)
+
 
 
 ## Configuration
@@ -42,21 +42,30 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
 
 # Data Visualization
 
-1. Main Page
-2. View One
-3. View Two
+* Main Page
+![image](https://user-images.githubusercontent.com/99145651/178017741-bcd00d97-fb85-4895-9e14-a08452d3c581.png)
 
-4. View Three
+
+
+![Web Dashboard](https://user-images.githubusercontent.com/99145651/179328660-b2ff4c2a-370e-43e9-a668-ad700175dd78.png)
+* View One
+
+
 
 ![image](https://user-images.githubusercontent.com/99145651/179124869-48189c40-2eba-46e0-82fe-557d6a1c3053.png)
 
-5. Our Team
+* View Two
+
+
+<img width="256" alt="image (2)" src="https://user-images.githubusercontent.com/99145651/179328504-23171aa7-7fa0-4bdc-9965-87b08d7e370c.png">
+
+* View Three
+
 
 ![image](https://user-images.githubusercontent.com/99145651/179123246-7aeebdf3-767b-43d2-a384-ddc7a4a7b4c0.png)
-
+* Our Team
 
 ## Resources/Tools
-* Python-Flask API
 * Plotly
 * Pandas
 * Numpy
