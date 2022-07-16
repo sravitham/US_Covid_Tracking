@@ -27,7 +27,7 @@ As a team, we split out tasks to ensure that we complete the challenge within a 
 1. **[Project Proposal](https://docs.google.com/document/d/1EkK7s-hrbfpuLD8JQimp48hNTOVaU1L6Duz4obrLrRY/edit)**
     * **Topic/Rationale/Use Cases:** Determine what use cases and data we want to visualize. Use cases help determined how our data would help our audience. Review link above to identify a list use cases and the project proposal. 
     * [Data Set](./Data/covid_data.json): Selected the dataset for historical COVID-19 as data collection by state ended on March 07, 2021 per website. We selected the api and studied the json data to best know how to visualize it for our audience.
-    * **Specifications:** Assisted in sketching our final design by pulling in pictures on how we want to display our data. Determined that we wanted a dashboard, chloropleth map, bar graph, and gauge to showcase our data. See images we gathered our inspiration. 
+    * **Specifications:** Assisted in sketching our final design by pulling in pictures on how we want to display our data. Determined that we wanted a dashboard, chloropleth map, and gauge to showcase our data. See images we gathered our inspiration. 
 
     ![Dashboard](./getbootstrap.com/Images/dashboard_img.png)
     ![Chloropleth Map](./getbootstrap.com/Images/carousel_img_us_map.png)
