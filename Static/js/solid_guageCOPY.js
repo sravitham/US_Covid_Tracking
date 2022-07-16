@@ -1,3 +1,5 @@
+// Error in pulling the information from the D3
+
 // d3.json('../../Data/covidSummary.json').then((cov) =>{
 //   console.log(cov)
 //   var toDeaths=cov['Total Deaths'][0]
